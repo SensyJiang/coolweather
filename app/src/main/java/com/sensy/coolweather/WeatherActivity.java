@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.sensy.coolweather.gson.Forecast;
 import com.sensy.coolweather.gson.Weather;
+import com.sensy.coolweather.service.AutoUpdateService;
 import com.sensy.coolweather.util.HttpUtil;
 import com.sensy.coolweather.util.Utility;
 
@@ -230,6 +231,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
